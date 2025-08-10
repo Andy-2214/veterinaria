@@ -21,9 +21,16 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllerRoute(
+   registro-mascota
+    name: "mascota",
+    pattern: "Mascota/{action=Registro}/{id?}",
+    defaults: new { controller = "Mascota" }
+);
+app.MapControllerRoute(
     name: "productos",
     pattern: "Productos/{action=Index}/{id?}",
     defaults: new { controller = "Productos" });
+ 
 
 app.MapControllerRoute(
     name: "default",
