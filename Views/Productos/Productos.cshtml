@@ -1,0 +1,26 @@
+@model List<Veterinaria.Models.Productos>
+
+<h1>Catálogo de Productos para Mascotas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Precio (S/)</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var producto in Model)
+    {
+        <tr>
+            <td>@producto.Nombre</td>
+            <td>@producto.Precio</td>
+            <td>@producto.Descripcion</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<br>
+<a asp-controller="home" asp-action="Index" class="btn btn-primary">Volver</a>

@@ -21,6 +21,11 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllerRoute(
+    name: "productos",
+    pattern: "Productos/{action=Index}/{id?}",
+    defaults: new { controller = "Productos" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
